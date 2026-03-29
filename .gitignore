@@ -1,1 +1,7 @@
-__pycache__/\n*.pyc\n*.egg-info/\ndist/\nbuild/\n.pytest_cache/\n*.egg\nsrc/*.egg-info/
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+*.egg
