@@ -133,3 +133,21 @@ def format_report(result: BacktestResult) -> str:
         "=" * 60,
     ]
     return "\n".join(lines)
+
+
+def calmar_ratio(returns, period: int = 252) -> float:
+    """Calculate the Calmar ratio (annualized return / max drawdown).
+
+    A higher Calmar ratio indicates better risk-adjusted performance.
+    Values above 3.0 are considered excellent.
+    """
+    import numpy as np
+    arr = np.array(returns)
+    annual_return = np.mean(arr) * period
+    cumulative = np.cumprod(1 + arr)
+    peak = np.maximum.accumulate(cumulative)
+    drawdown = (cumulative - peak) / peak
+    max_dd = abs(np.min(drawdown))
+    if max_dd < 1e-10:
+        return 0.0
+    return annual_return / max_dd
