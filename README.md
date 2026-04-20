@@ -114,8 +114,8 @@ print(f"Is overfit: {result.is_overfit}")
 
 ### BacktestEngine
 
-- `BacktestEngine(config=None)` — Create engine with optional config
-- `engine.run(prices, signals)` — Run backtest and return `BacktestResult`
+- `BacktestEngine(config=None)` ··· Create engine with optional config
+- `engine.run(prices, signals)` ··· Run backtest and return `BacktestResult`
 
 ### BacktestResult
 
@@ -124,14 +124,14 @@ Contains `equity_curve` and `returns` (numpy arrays) plus `trades` (list of Trad
 ### WalkForwardOptimizer
 
 - `WalkForwardOptimizer(n_folds=5, train_ratio=0.7, overfit_threshold=0.5, base_config=None)`
-- `optimizer.run(prices, signal_fn, param_grid)` — Returns `WalkForwardResult`
+- `optimizer.run(prices, signal_fn, param_grid)` ··· Returns `WalkForwardResult`
 
 ### Stats Module
 
-- `annualized_sharpe(returns, timeframe_minutes)` — Timeframe aware Sharpe ratio
-- `max_drawdown(equity_curve)` — Peak to trough drawdown fraction
-- `profit_factor(trades)` — Gross profit over gross loss
-- `format_report(result)` — Human readable performance summary
+- `annualized_sharpe(returns, timeframe_minutes)` ··· Timeframe aware Sharpe ratio
+- `max_drawdown(equity_curve)` ··· Peak to trough drawdown fraction
+- `profit_factor(trades)` ··· Gross profit over gross loss
+- `format_report(result)` ··· Human readable performance summary
 
 ## Running Tests
 
